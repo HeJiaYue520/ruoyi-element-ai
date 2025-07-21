@@ -181,7 +181,9 @@ export const useSessionStore = defineStore('session', () => {
         = targetIndex >= 0
           ? Math.floor(targetIndex / pageSize.value) + 1 // 索引从0开始，页码从1开始
           : 1; // 未找到时默认刷新第一页（可能因排序变化导致位置改变）
-      // 3. 刷新目标页数据
+      // 3. 删除 sessionList 中该索引的元素
+      sessionList.value = sessionList.value.slice(0, targetIndex).concat(sessionList.value.slice(targetIndex + 1));
+      // 4. 刷新目标页数据
       await requestSessionList(targetPage, true);
     }
     catch (error) {

@@ -1,11 +1,11 @@
 export type LayoutType = 'vertical';
 
 // 仿豆包折叠逻辑
-export type CollapseType =
-  | 'alwaysCollapsed' // 始终折叠
-  | 'followSystem' // 跟随系统视口宽度
-  | 'alwaysExpanded' // 始终打开
-  | 'narrowExpandWideCollapse'; // 系统视口 宽小则张，宽大则收
+export type CollapseType
+  = | 'alwaysCollapsed' // 始终折叠
+    | 'followSystem' // 跟随系统视口宽度
+    | 'alwaysExpanded' // 始终打开
+    | 'narrowExpandWideCollapse'; // 系统视口 宽小则张，宽大则收
 
 export interface DesignConfigState {
   // 系统主题
